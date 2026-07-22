@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koffi — Merch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  main.merch{max-width:640px;margin:0 auto;padding:1.5rem 1.1rem 3rem;}
+  .merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;}
+  .merch-card{background:var(--cream-2);border:1px solid var(--rule);border-radius:14px;padding:0.9rem;}
+  .merch-img{height:110px;border-radius:10px;background:var(--cream);margin-bottom:0.6rem;}
+  .merch-name{font-family:'Poppins',sans-serif;font-weight:600;font-size:0.92rem;color:var(--ink);margin:0;}
+  .merch-price{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1rem;color:var(--wine);margin:0.2rem 0 0.7rem;}
+  .wa-btn{display:block;text-align:center;text-decoration:none;background:var(--wine);color:var(--cream);border-radius:999px;font-family:'Poppins',sans-serif;font-weight:600;font-size:0.85rem;padding:0.55rem;}
+  .wa-btn:hover{background:var(--wine-deep);}
+</style>
+</head>
+<body>
+
+<div style="padding:0.6rem 1rem 0;"><a href="inicio.html" style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:var(--wine);text-decoration:none;">&larr; Inicio</a></div>
+
+<header>
+  <div class="badge"><span>KO</span><span>FFI</span></div>
+  <h1>Koffi</h1>
+  <p class="location">Merch</p>
+  <p class="tagline">llévate un pedazo de koffi.</p>
+</header>
+
+<!-- EDITAR: cambia productos, precios, fotos y el número de WhatsApp -->
+<main class="merch">
+  <div class="merch-grid">
+    <div class="merch-card">
+      <div class="merch-img"></div>
+      <p class="merch-name">Taza Koffi</p>
+      <p class="merch-price">$180</p>
+      <a class="wa-btn" href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20pedir%20una%20taza%20Koffi" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+    <div class="merch-card">
+      <div class="merch-img"></div>
+      <p class="merch-name">Playera</p>
+      <p class="merch-price">$280</p>
+      <a class="wa-btn" href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20pedir%20una%20playera%20Koffi" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+    <div class="merch-card">
+      <div class="merch-img"></div>
+      <p class="merch-name">Bolsa de grano 250g</p>
+      <p class="merch-price">$150</p>
+      <a class="wa-btn" href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20pedir%20una%20bolsa%20de%20grano%20Koffi" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="made">Koffi</p>
+  <p>Demo — reemplaza el número de WhatsApp por el real del negocio.</p>
+</footer>
+
+</body>
+</html>

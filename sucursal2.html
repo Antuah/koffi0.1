@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koffi — Sucursal 2</title>
+<meta name="description" content="Menú digital de Koffi Cuernavaca">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div style="padding:0.6rem 1rem 0;"><a href="inicio.html" style="font-family:'Poppins',sans-serif;font-size:0.75rem;color:var(--wine);text-decoration:none;">&larr; Inicio</a></div>
+
+<!-- EDITAR: estos son los mismos platillos que sucursal 1, reemplaza por el menú real de sucursal 2 -->
+<header>
+  <div class="badge"><span>KO</span><span>FFI</span></div>
+  <h1>Koffi</h1>
+  <p class="location">Sucursal 2</p>
+  <p class="tagline">but first, koffi.</p>
+
+  <!-- EDITAR: reemplaza este enlace por tu PDF de Google Drive si quieres ofrecer descarga -->
+  <a class="pdf-btn" href="#" target="_blank" rel="noopener">📄 Descargar menú en PDF</a>
+</header>
+
+<nav class="categories" aria-label="Categorías del menú">
+  <div class="cat-scroll" id="catScroll">
+    <button class="cat-pill" data-target="calientes">Bebidas calientes</button>
+    <button class="cat-pill" data-target="frias">Bebidas frías</button>
+    <button class="cat-pill" data-target="postres">Postres</button>
+    <button class="cat-pill" data-target="snacks">Para picar</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- EDITAR: cambia nombres, descripciones y precios de cada sección -->
+
+  <section class="category reveal" id="calientes">
+    <div class="cat-heading">
+      <h2>Bebidas calientes</h2>
+      <span class="count-chip">5</span>
+    </div>
+    <div class="accent-bar"></div>
+    <ul class="items">
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Café Americano</span>
+          </div>
+          <p class="item-desc">Grano de la casa, extracción suave.</p>
+        </div>
+        <span class="item-price">$35</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Cappuccino</span>
+            <span class="tag star">Favorito</span>
+          </div>
+          <p class="item-desc">Espresso doble, leche vaporizada, espuma tupida.</p>
+        </div>
+        <span class="item-price">$48</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Café de Olla</span>
+          </div>
+          <p class="item-desc">Piloncillo, canela y clavo, receta de la abuela.</p>
+        </div>
+        <span class="item-price">$42</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Chocolate Caliente</span>
+            <span class="tag">Vegetariano</span>
+          </div>
+          <p class="item-desc">Cacao 70%, leche entera, toque de canela.</p>
+        </div>
+        <span class="item-price">$45</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Té de Hierbas</span>
+            <span class="tag">Vegano</span>
+          </div>
+          <p class="item-desc">Manzanilla, menta o té negro.</p>
+        </div>
+        <span class="item-price">$30</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="category reveal" id="frias">
+    <div class="cat-heading">
+      <h2>Bebidas frías</h2>
+      <span class="count-chip">4</span>
+    </div>
+    <div class="accent-bar"></div>
+    <ul class="items">
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Frappé de Café</span>
+            <span class="tag star">Favorito</span>
+          </div>
+          <p class="item-desc">Espresso helado, leche, hielo triturado.</p>
+        </div>
+        <span class="item-price">$55</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Cold Brew</span>
+          </div>
+          <p class="item-desc">Extracción en frío 18 horas, notas achocolatadas.</p>
+        </div>
+        <span class="item-price">$50</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Limonada Mineral</span>
+            <span class="tag">Vegano</span>
+          </div>
+          <p class="item-desc">Limón recién exprimido, agua mineral.</p>
+        </div>
+        <span class="item-price">$38</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Té Helado de Durazno</span>
+            <span class="tag">Vegano</span>
+          </div>
+          <p class="item-desc">Infusión negra, durazno natural, poco dulce.</p>
+        </div>
+        <span class="item-price">$40</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="category reveal" id="postres">
+    <div class="cat-heading">
+      <h2>Postres</h2>
+      <span class="count-chip">4</span>
+    </div>
+    <div class="accent-bar"></div>
+    <ul class="items">
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Pan de Elote</span>
+            <span class="tag">Vegetariano</span>
+          </div>
+          <p class="item-desc">Receta casera, textura húmeda, recién horneado.</p>
+        </div>
+        <span class="item-price">$45</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Pastel de Zanahoria</span>
+            <span class="tag">Vegetariano</span>
+          </div>
+          <p class="item-desc">Betún de queso crema, nuez tostada.</p>
+        </div>
+        <span class="item-price">$50</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Galletas de Avena</span>
+            <span class="tag">Vegano</span>
+          </div>
+          <p class="item-desc">Avena, pasas y un toque de canela.</p>
+        </div>
+        <span class="item-price">$28</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Brownie</span>
+            <span class="tag star">Favorito</span>
+          </div>
+          <p class="item-desc">Chocolate 70%, centro fundente.</p>
+        </div>
+        <span class="item-price">$42</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="category reveal" id="snacks">
+    <div class="cat-heading">
+      <h2>Para picar</h2>
+      <span class="count-chip">4</span>
+    </div>
+    <div class="accent-bar"></div>
+    <ul class="items">
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Croissant</span>
+            <span class="tag">Vegetariano</span>
+          </div>
+          <p class="item-desc">Mantequilla, hojaldrado, horneado diario.</p>
+        </div>
+        <span class="item-price">$38</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Bagel con Queso Crema</span>
+          </div>
+          <p class="item-desc">Bagel tostado, queso crema natural.</p>
+        </div>
+        <span class="item-price">$52</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Ensalada de Frutas</span>
+            <span class="tag">Vegano</span>
+            <span class="tag">Sin gluten</span>
+          </div>
+          <p class="item-desc">Fruta de temporada, un toque de limón.</p>
+        </div>
+        <span class="item-price">$45</span>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <div class="item-name-row">
+            <span class="item-name">Sandwich Club</span>
+          </div>
+          <p class="item-desc">Pavo, tocino, lechuga, jitomate, pan artesanal.</p>
+        </div>
+        <span class="item-price">$68</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p class="made">but first, koffi.</p>
+  <p>Precios en pesos mexicanos, incluyen IVA.<br>
+  ¿Alergias o intolerancias? Pregunta a tu mesero.</p>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
