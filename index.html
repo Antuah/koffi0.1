@@ -3,294 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koffi — Inicio</title>
+<title>Koffi</title>
 <meta name="description" content="Koffi Cuernavaca — menú, merch y eventos">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  :root{
-    --wine:#7a231f;
-    --wine-deep:#3f100e;
-    --wine-soft:#9a3a32;
-    --cream:#faf5ec;
-    --cream-2:#f1e6d5;
-    --ink:#241512;
-    --ink-dim:#7a6a61;
-    --gold:#c99a3d;
-    --rule:rgba(36,21,18,0.12);
-  }
+  html,body{height:100%;margin:0;overflow:hidden;}
 
-  *{box-sizing:border-box;}
-  html{-webkit-tap-highlight-color:transparent;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Poppins', sans-serif;
-    -webkit-font-smoothing:antialiased;
-    min-height:100vh;
-  }
-
-  @media (prefers-reduced-motion: no-preference){
-    .reveal{
-      opacity:0;
-      transform:translateY(14px);
-      transition:opacity .6s ease, transform .6s ease;
-    }
-    .reveal.is-visible{opacity:1;transform:translateY(0);}
-  }
-
-  /* ---------- Header ---------- */
-  header{
-    padding:2.6rem 1.25rem 2.2rem;
-    text-align:center;
-    background:radial-gradient(120% 100% at 50% 0%, var(--wine-soft) 0%, var(--wine) 45%, var(--wine-deep) 100%);
-    color:var(--cream);
+  /* ---------- Portada (swipe) ---------- */
+  .hero{
     position:relative;
-  }
-
-  .badge{
-    width:88px;
-    height:88px;
-    border-radius:50%;
-    background:var(--cream);
-    border:3px solid var(--ink);
+    height:100vh;
+    height:100dvh;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 1rem;
-    line-height:0.78;
-    box-shadow:0 4px 0 rgba(0,0,0,0.25);
-  }
-  .badge span{
-    font-family:'Baloo 2', sans-serif;
-    font-weight:800;
-    font-size:1.55rem;
-    color:var(--wine);
-    letter-spacing:0.01em;
-  }
-
-  h1{
-    font-family:'Baloo 2', sans-serif;
-    font-weight:800;
-    font-size:clamp(2.6rem, 10vw, 3.4rem);
-    margin:0;
-    line-height:1;
-    letter-spacing:0.01em;
-    color:var(--cream);
-  }
-  .location{
-    font-family:'Poppins', sans-serif;
-    font-weight:600;
-    font-size:0.78rem;
-    letter-spacing:0.3em;
-    text-transform:uppercase;
-    color:var(--gold);
-    margin:0.55rem 0 0;
-  }
-  .tagline{
-    font-family:'Poppins', sans-serif;
-    font-weight:400;
-    font-style:italic;
-    color:rgba(250,245,236,0.75);
-    margin:0.8rem 0 0;
-    font-size:0.98rem;
-  }
-
-  .pdf-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:0.5rem;
-    margin-top:1.5rem;
-    padding:0.65rem 1.3rem;
-    border:1.5px solid var(--gold);
-    border-radius:999px;
-    color:var(--gold);
-    text-decoration:none;
-    font-weight:600;
-    font-size:0.85rem;
-    letter-spacing:0.02em;
-    transition:background .25s ease, color .25s ease;
-  }
-  .pdf-btn:hover{background:var(--gold);color:var(--wine-deep);}
-
-  /* ---------- Sticky category nav ---------- */
-  nav.categories{
-    position:sticky;
-    top:0;
-    z-index:20;
-    background:linear-gradient(var(--cream) 82%, transparent);
-    padding:0.9rem 0 0.6rem;
-    backdrop-filter:blur(2px);
-  }
-  .cat-scroll{
-    display:flex;
-    gap:0.55rem;
-    overflow-x:auto;
-    padding:0 1.1rem 0.3rem;
-    scrollbar-width:none;
-  }
-  .cat-scroll::-webkit-scrollbar{display:none;}
-  .cat-pill{
-    flex:0 0 auto;
-    font-family:'Poppins', sans-serif;
-    font-weight:600;
-    font-size:0.88rem;
-    color:var(--wine);
-    background:var(--cream);
-    border:1.5px solid var(--wine);
-    padding:0.45rem 1.05rem;
-    border-radius:999px;
-    cursor:pointer;
-    white-space:nowrap;
-    transition:all .2s ease;
-  }
-  .cat-pill.active{
-    color:var(--cream);
-    background:var(--wine);
-    border-color:var(--wine);
-  }
-
-  /* ---------- Menu sections ---------- */
-  main{
-    max-width:640px;
-    margin:0 auto;
-    padding:0.6rem 1.1rem 3rem;
-  }
-  section.category{
-    padding-top:2.2rem;
-    scroll-margin-top:4.6rem;
-  }
-  .cat-heading{
-    display:flex;
-    align-items:center;
-    gap:0.6rem;
-    margin-bottom:0.5rem;
-  }
-  .cat-heading h2{
-    font-family:'Baloo 2', sans-serif;
-    font-weight:700;
-    font-size:1.5rem;
-    color:var(--wine);
-    margin:0;
-  }
-  .count-chip{
-    flex:0 0 auto;
-    width:24px;
-    height:24px;
-    border-radius:50%;
-    background:var(--gold);
-    color:var(--wine-deep);
-    font-family:'Poppins', sans-serif;
-    font-weight:700;
-    font-size:0.72rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .accent-bar{
-    width:56px;
-    height:5px;
-    border-radius:999px;
-    background:var(--gold);
-    margin:0 0 1.15rem;
-  }
-
-  ul.items{list-style:none;margin:0;padding:0;}
-  li.item{
-    display:flex;
     justify-content:space-between;
-    gap:1rem;
-    padding:0.95rem 0;
-    border-bottom:1px solid var(--rule);
+    overflow:hidden;
+    color:var(--cream);
+    /* EDITAR: cambia el gradiente por background-image:url('tu-foto.jpg') background-size:cover
+       cuando tengas una foto real de café para la portada */
+    background:radial-gradient(140% 100% at 30% 0%, var(--wine-soft) 0%, var(--wine) 42%, var(--wine-deep) 78%, #180705 100%);
   }
-  li.item:last-child{border-bottom:none;}
-  .item-info{flex:1;min-width:0;}
-  .item-name-row{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:0.4rem;
-  }
-  .item-name{
-    font-weight:600;
-    font-size:1.02rem;
-    color:var(--ink);
-  }
-  .tag{
-    font-size:0.63rem;
-    font-weight:600;
-    letter-spacing:0.03em;
-    text-transform:uppercase;
-    padding:0.15rem 0.5rem;
-    border-radius:999px;
-    border:1px solid var(--wine-soft);
-    color:var(--wine);
-  }
-  .tag.star{
-    border-color:var(--gold);
-    color:var(--wine-deep);
-    background:var(--gold);
-    font-weight:700;
-  }
-  .item-desc{
-    margin:0.25rem 0 0;
-    font-size:0.85rem;
-    color:var(--ink-dim);
-    line-height:1.4;
-  }
-  .item-price{
-    font-family:'Baloo 2', sans-serif;
-    font-weight:700;
-    font-size:1.1rem;
-    color:var(--wine);
-    white-space:nowrap;
-    align-self:flex-start;
-    padding-top:0.1rem;
-  }
+  .hero-top{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.4rem 0;}
+  .logo-mark{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1rem;letter-spacing:0.02em;color:var(--cream);}
+  .hero-copy{padding:0 1.6rem;margin-top:auto;}
+  .hero-copy h1{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(2.4rem,11vw,3.2rem);line-height:1.05;margin:0 0 0.5rem;}
+  .hero-copy p{font-family:'Poppins',sans-serif;font-style:italic;font-size:0.95rem;color:var(--gold);margin:0;}
 
-  /* ---------- Footer ---------- */
-  footer{
-    text-align:center;
-    padding:2.4rem 1.25rem 3rem;
-    background:var(--cream-2);
-    color:var(--ink-dim);
-    font-size:0.8rem;
-    line-height:1.6;
+  .swipe-wrap{padding:1.6rem 1.4rem 2.2rem;}
+  .swipe-pill{
+    position:relative;height:56px;border-radius:999px;
+    background:rgba(250,245,236,0.12);border:1px solid rgba(250,245,236,0.28);
+    display:flex;align-items:center;padding:4px;cursor:pointer;user-select:none;
   }
-  footer .made{
-    font-family:'Baloo 2', sans-serif;
-    font-weight:700;
-    font-size:1.05rem;
-    color:var(--wine);
-    margin-bottom:0.4rem;
+  .swipe-label{
+    position:absolute;left:0;right:0;text-align:center;
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:0.85rem;
+    color:var(--cream);pointer-events:none;
   }
+  .swipe-handle{
+    width:48px;height:48px;border-radius:50%;background:var(--gold);
+    display:flex;align-items:center;justify-content:center;position:relative;z-index:2;
+    touch-action:none;
+  }
+  .swipe-handle svg{width:18px;height:18px;}
+
+  /* ---------- Menú (overlay) ---------- */
+  .menu-screen{
+    position:fixed;inset:0;background:var(--wine-deep);color:var(--cream);
+    transform:translateY(100%);transition:transform .45s cubic-bezier(.4,0,.2,1);
+    z-index:10;overflow:hidden;
+  }
+  .menu-screen.open{transform:translateY(0);}
+  .menu-circle{position:absolute;top:-70px;right:-70px;width:210px;height:210px;border-radius:50%;background:var(--gold);opacity:0.9;}
+  .menu-top{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 1.4rem 0;position:relative;z-index:2;}
+  .menu-close{background:none;border:none;color:var(--cream);font-size:1.5rem;line-height:1;cursor:pointer;padding:4px;}
+  .menu-list{padding:3rem 1.6rem 0;position:relative;z-index:2;display:flex;flex-direction:column;gap:1.1rem;}
+  .menu-list a{text-decoration:none;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.7rem;color:rgba(250,245,236,0.45);}
+  .menu-list a.active{color:var(--cream);}
+  .menu-rule{margin:2.5rem 1.6rem 0;border:none;border-top:1px solid rgba(250,245,236,0.2);}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="badge"><span>KO</span><span>FFI</span></div>
-  <h1>Koffi</h1>
-  <p class="location">Cuernavaca</p>
-  <p class="tagline">but first, koffi.</p>
-</header>
+<div class="hero">
+  <div class="hero-top">
+    <span class="logo-mark">koffi</span>
+  </div>
+  <div class="hero-copy">
+    <h1>Koffi</h1>
+    <p>but first, koffi.</p>
+  </div>
+  <div class="swipe-wrap">
+    <div class="swipe-pill" id="swipePill">
+      <span class="swipe-label">Desliza para continuar</span>
+      <div class="swipe-handle" id="swipeHandle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3f100e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- EDITAR: los enlaces están ordenados por longitud del texto, el más corto arriba -->
-<main class="home">
-  <a class="home-link w-1" href="merch.html">Merch</a>
-  <a class="home-link w-2" href="eventos.html">Eventos</a>
-  <a class="home-link w-3 filled" href="sucursal1.html">Menú sucursal 1</a>
-  <a class="home-link w-4 filled" href="sucursal2.html">Menú sucursal 2</a>
-</main>
+<!-- EDITAR: orden por longitud del texto, el más corto arriba -->
+<div class="menu-screen" id="menuScreen">
+  <div class="menu-circle"></div>
+  <div class="menu-top">
+    <span class="logo-mark">koffi</span>
+    <button class="menu-close" id="menuClose" aria-label="Cerrar menú">&times;</button>
+  </div>
+  <nav class="menu-list">
+    <a class="active" href="merch.html">Merch</a>
+    <a href="eventos.html">Eventos</a>
+    <a href="sucursal1.html">Menú sucursal 1</a>
+    <a href="sucursal2.html">Menú sucursal 2</a>
+  </nav>
+  <hr class="menu-rule">
+</div>
 
-<footer>
-  <p class="made">Koffi</p>
-  <p>Demo de inicio — cuando esté aprobado, renombra este archivo a index.html.</p>
-</footer>
+<script>
+(function(){
+  var pill = document.getElementById('swipePill');
+  var handle = document.getElementById('swipeHandle');
+  var menu = document.getElementById('menuScreen');
+  var closeBtn = document.getElementById('menuClose');
+  var dragging = false, startX = 0, currentX = 0, maxX = 0;
+
+  function openMenu(){ menu.classList.add('open'); resetHandle(); }
+  function closeMenu(){ menu.classList.remove('open'); }
+  function resetHandle(){ handle.style.transform = 'translateX(0px)'; }
+
+  function down(e){
+    dragging = true;
+    startX = e.clientX;
+    maxX = pill.clientWidth - handle.clientWidth - 8;
+    handle.setPointerCapture(e.pointerId);
+  }
+  function move(e){
+    if(!dragging) return;
+    currentX = Math.min(Math.max(0, e.clientX - startX), maxX);
+    handle.style.transform = 'translateX(' + currentX + 'px)';
+  }
+  function up(){
+    if(!dragging) return;
+    dragging = false;
+    if(currentX > maxX * 0.65){ openMenu(); } else { resetHandle(); }
+    currentX = 0;
+  }
+
+  handle.addEventListener('pointerdown', down);
+  window.addEventListener('pointermove', move);
+  window.addEventListener('pointerup', up);
+  pill.addEventListener('click', function(e){
+    if(e.target === pill || e.target.classList.contains('swipe-label')) openMenu();
+  });
+  closeBtn.addEventListener('click', closeMenu);
+})();
+</script>
 
 </body>
 </html>
